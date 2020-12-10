@@ -1,0 +1,65 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        path: src
+
+        
+    - uses: actions/checkout@v2
+      with:
+        ref: deploy
+        path: out
+        
+    - name: check out orpha
+      shell: powershell 
+      run: |
+        cd out
+        git checkout --orphan tmp
+        Get-ChildItem | Remove-Item
+        ls
+
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - run: npm i spirit-island-renderer -g
+
+    - shell: powershell
+      name: Generate Images
+      run: |
+        cd src    
+        $s = ls  -Recurse *.json        
+        sir $s -t https://raw.githubusercontent.com/LokiMidgard/spirit-island-custom-spirits/deploy/ -o ../out
+
+    - name: check
+      shell: powershell
+      run: |
+        cd out
+        ls
+
+    - name: git commit
+      shell: powershell
+      run: |
+        cd out
+        git config  user.email "Renderer@Spirit.Island"
+        git config  user.name "Spirit Island Renderer"
+        git add .
+        git commit -m "Rendering"
+        git branch -D deploy
+        git branch -m deploy
+        git push -f origin deploy
