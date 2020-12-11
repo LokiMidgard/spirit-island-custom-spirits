@@ -44,8 +44,9 @@ jobs:
       name: Generate Images
       run: |
         cd src    
-        $s = ls  -Recurse *.json        
-        sir $s -t https://raw.githubusercontent.com/LokiMidgard/spirit-island-custom-spirits/deploy/ -o ../out
+        $s = "sir -t https://raw.githubusercontent.com/LokiMidgard/spirit-island-custom-spirits/deploy/ -o ../out"
+        ls  -Recurse *.json | %{ $s += " "+ $_.ToString()}
+        Invoke-Expression -Command $s
 
     - name: git commit
       shell: powershell
