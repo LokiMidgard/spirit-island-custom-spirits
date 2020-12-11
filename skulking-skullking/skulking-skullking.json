@@ -1,6 +1,6 @@
 {
-  "$schema": "https://raw.githubusercontent.com/LokiMidgard/spirit-island-renderer/v0.0.5/spirit-schema.json",
-  "name": "Ashes Renews the Land",
+  "$schema": "https://raw.githubusercontent.com/LokiMidgard/spirit-island-renderer/v0.0.6/spirit-schema.json",
+  "name": "Skulkung Skullking",
   "boarder": "feather.png",
   "image": {
     "path": "553878_miststrara_phoenix-rising.jpg",
@@ -67,8 +67,8 @@
       1,
       2,
       {
-        "type": "move-presence",
-        "range": 1
+        "type": "push",
+        "push": "dahan"
       },
       3,
       "air",
@@ -157,8 +157,9 @@
       "name": "Let them fight their dead",
       "speed": "slow",
       "target": {
-        "range": 0,
-        "targetType": "blight"
+        "targetType": "land",
+        "targetLand": "blight",
+        "range": 0
       },
       "levels": [
         {
