@@ -1,0 +1,284 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LokiMidgard/spirit-island-renderer/v0.0.5/spirit-schema.json",
+  "name": "Ashes Renews the Land",
+  "boarder": "feather.png",
+  "image": {
+    "path": "553878_miststrara_phoenix-rising.jpg",
+    "artistName": "miststrara"
+  },
+  "imageFrontPosition": {
+    "x": 0,
+    "y": 0,
+    "scale": 70
+  },
+  "imageCardBackPosition": {
+    "x": -200,
+    "y": -150,
+    "scale": 280
+  },
+  "imageLorePosition": {
+    "x": 0,
+    "y": 0,
+    "scale": 100
+  },
+  "complexety": "moderate",
+  "lore": "Hakuna Matata",
+  "setup": "You start with 1 of your {presence} in highest numberd {blight}.",
+  "playStyle": "Play how you want",
+  "growth": {
+    "title": "GROWTH (Pick TWO)",
+    "choise": [
+      "reclaim-all",
+      "gain-power-card",
+      [
+        {
+          "type": "gain-energy",
+          "number": 2
+        },
+        {
+          "type": "gain-element",
+          "element": "moon"
+        }
+      ],
+      {
+        "type": "add-presence",
+        "range": 1
+      }
+    ]
+  },
+  "summaryPower": {
+    "control": 2,
+    "defense": 3,
+    "fear": 3,
+    "offense": 4,
+    "utility": 9
+  },
+  "presence": {
+    "energy": [
+      1,
+      2,
+      "moon",
+      3,
+      "animal",
+      4,
+      "reclaim-one"
+    ],
+    "card": [
+      1,
+      2,
+      {
+        "type": "move-presence",
+        "range": 1
+      },
+      3,
+      "air",
+      4,
+      5
+    ]
+  },
+  "specialRules": [
+    {
+      "title": "Dark Rutual",
+      "text": "{slow} destroy 1 {dahan} in your land to gain 2 energy."
+    },
+    {
+      "title": "Cleasing Death",
+      "text": "{slow} destroy {dahan} in your lands to remove 1 {blight}."
+    },
+    {
+      "title": "Scapegoat",
+      "text": "If {presence} would be destroyed, instead destroy the same number of {dahan} in the land."
+    }
+  ],
+  "inatePowers": [
+    {
+      "name": "Growing Dread",
+      "speed": "fast",
+      "target": {
+        "range": 1,
+        "targetType": "land"
+      },
+      "levels": [
+        {
+          "effect": "1 {fear}",
+          "requires": [
+            {
+              "mana": "moon",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "effect": "each invader -1 damage",
+          "requires": [
+            {
+              "mana": "moon",
+              "amount": 2
+            },
+            {
+              "mana": "air",
+              "amount": 1
+            },
+            {
+              "mana": "earth",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "effect": "Instead - Fear lvl damge",
+          "requires": [
+            {
+              "mana": "moon",
+              "amount": 3
+            },
+            {
+              "mana": "air",
+              "amount": 1
+            },
+            {
+              "mana": "earth",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "effect": "+2 {fear}",
+          "requires": [
+            {
+              "mana": "moon",
+              "amount": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Let them fight their dead",
+      "speed": "slow",
+      "target": {
+        "range": 0,
+        "targetType": "blight"
+      },
+      "levels": [
+        {
+          "effect": "If 1 or more invaders were destoryed on this board in this tunr add 1 {dahan}",
+          "requires": [
+            {
+              "mana": "moon",
+              "amount": 2
+            },
+            {
+              "mana": "animal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "effect": "Instead, per 2 health of invaders destoryed this turn on this board add 1 {dahan} (max. 3)",
+          "requires": [
+            {
+              "mana": "moon",
+              "amount": 3
+            },
+            {
+              "mana": "animal",
+              "amount": 2
+            },
+            {
+              "mana": "earth",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "effect": "You may add the {dahn} in adjacent lands.",
+          "requires": [
+            {
+              "mana": "air",
+              "amount": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "uniquePowers": [
+    {
+      "name": "Corpse Blast",
+      "effect": "Destroy 1 {dahan} deal 2 damage",
+      "energy": 0,
+      "image": {
+        "path": "regrowth.png",
+        "artistName": "bush regrowth by freeaussiestock.com"
+      },
+      "mana": [
+        "moon",
+        "air",
+        "fire"
+      ],
+      "speed": "fast",
+      "target": {
+        "targetType": "land",
+        "targetLand": "dahan",
+        "range": 1
+      }
+    },
+    {
+      "name": "Undead chimera",
+      "effect": "+ 4 healt and + 4 damage to 1 {dahan} in target land. <br/> 1 {fear}",
+      "energy": 2,
+      "image": {
+        "path": "fireDance.jpg",
+        "artistName": "Navajo Fire Dance by William Robinson Leigh"
+      },
+      "mana": [
+        "moon",
+        "earth",
+        "animal"
+      ],
+      "target": {
+        "targetType": "land",
+        "range": 1,
+        "targetLand": "dahan"
+      },
+      "speed": "fast"
+    },
+    {
+      "name": "Ritual of Reanimagieon",
+      "effect": "If 1 or more {dahan} were destoyed this turn add 1 {dahn}",
+      "energy": 1,
+      "image": "signal.png",
+      "mana": [
+        "moon",
+        "earth",
+        "plant"
+      ],
+      "target": {
+        "targetType": "land",
+        "targetLand": "land",
+        "range": 1
+      },
+      "speed": "slow"
+    },
+    {
+      "name": "Wings of Terror",
+      "effect": "Gather 1 {dahan} </br> Push 1 {explorer}/{town}</br>2 {fear}",
+      "energy": 2,
+      "image": {
+        "path": "pillarOfFire.png",
+        "artistName": "U.S. Fish and Wildlife Service"
+      },
+      "mana": [
+        "air",
+        "water",
+        "animal"
+      ],
+      "target": {
+        "targetType": "land",
+        "range": 1
+      },
+      "speed": "fast"
+    }
+  ]
+}
