@@ -1,12 +1,13 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Node.js CI
+name: render spirit CI
 
 on:
   push:
     branches: [ main ]
-
+  
+  workflow_dispatch:
 
 jobs:
   build:
@@ -45,12 +46,6 @@ jobs:
         cd src    
         $s = ls  -Recurse *.json        
         sir $s -t https://raw.githubusercontent.com/LokiMidgard/spirit-island-custom-spirits/deploy/ -o ../out
-
-    - name: check
-      shell: powershell
-      run: |
-        cd out
-        ls
 
     - name: git commit
       shell: powershell
