@@ -44,7 +44,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 14.x
-    - run: npm i spirit-island-renderer@latest -g
+    - run: npm install -g spirit-island-renderer@latest
 
     - shell: powershell
       name: Generate Images
