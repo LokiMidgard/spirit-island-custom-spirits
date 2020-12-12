@@ -33,7 +33,11 @@ jobs:
       run: |
         cd out
         git checkout --orphan tmp
-        Get-ChildItem | Remove-Item
+        write-host 'Following Entrys Exists'
+        ls
+        write-host 'Remove Entrys'
+        Get-ChildItem | Remove-Item -Recurse -Force
+        write-host 'Following Entrys Exists'
         ls
 
     - name: Use Node.js 14.x
