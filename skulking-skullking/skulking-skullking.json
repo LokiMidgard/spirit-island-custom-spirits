@@ -193,7 +193,7 @@
           ]
         },
         {
-          "effect": "You may add the {dahn} in adjacent lands.",
+          "effect": "You may add the {dahan} in adjacent lands.",
           "requires": [
             {
               "mana": "air",
