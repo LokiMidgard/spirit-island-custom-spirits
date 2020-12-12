@@ -51,7 +51,7 @@ jobs:
       run: |
         cd src    
         $s = "sir -t https://raw.githubusercontent.com/LokiMidgard/spirit-island-custom-spirits/deploy/ -o ../out"
-        ls -Exclude .vscode -Directory | ls  -Recurse -Filter *.json -File | %{ $s += " "+ $_.ToString()}
+        ls -Exclude .vscode -Directory | ls  -Recurse -Filter *.json -File | %{  $_.FullName} | %{ $s += " "+ $_.ToString()}
         Invoke-Expression -Command $s
 
     - name: git commit
