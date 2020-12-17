@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/LokiMidgard/spirit-island-renderer/v0.1.5/spirit-schema.json",
+  "$schema": "https://raw.githubusercontent.com/LokiMidgard/spirit-island-renderer/v0.2.2/spirit-schema.json",
   "name": "Ashes Renews the Land",
   "boarder": {
     "path": "feather.png",
@@ -30,30 +30,45 @@
   "setup": "You start with two minor powers in the ashes (see special rule Fuled with Power). Put 1 {presence} in highest numberd mountain and one {presence} in the highest numberd sands.",
   "playStyle": "Play how you want",
   "growth": {
-    "title": "GROWTH (Pick the first and one other)",
-    "choise": [
-      "gain-power-card",
-      [
-        "forget-power-card",
-        "reclaim-all"
-      ],
-      [
-        "gain-power-card",
-        {
-          "type": "gain-energy",
-          "number": 2
-        }
-      ],
-      [
-        {
-          "type": "add-presence",
-          "range": 2
-        },
-        {
-          "type": "gain-element",
-          "element": "any"
-        }
-      ]
+    "title": "GROWTH",
+    "subGrowth": [
+      {
+        "title": "always:",
+        "choice": "gain-power-card"
+      },
+      {
+        "title": "pick one of:",
+        "choice": [
+          [
+            "forget-power-card",
+            "reclaim-all"
+          ],
+          [
+            "gain-power-card",
+            {
+              "type": "gain-energy",
+              "number": 2
+            }
+          ],
+          [
+            {
+              "type": "add-presence",
+              "range": 2
+            },
+            {
+              "type": "gain-element",
+              "element": "any"
+            }
+          ],
+          {
+            "cost": 2,
+            "growth": [
+              "gain-power-card",
+              "gain-power-card"
+            ]
+          }
+        ]
+      }
     ]
   },
   "summaryPower": {
@@ -105,29 +120,20 @@
       },
       "levels": [
         {
-          "effect": "Damage 1",
+          "effect": "Damage 3 add a {blight}. (This does not cascade or destroy your presence)",
           "requires": [
             {
               "mana": "fire",
-              "amount": 1
-            }
-          ]
-        },
-        {
-          "effect": "Damage 2 add a {blight}.",
-          "requires": [
-            {
-              "mana": "fire",
-              "amount": 1
+              "amount": 2
             },
             {
               "mana": "air",
-              "amount": 1
+              "amount": 2
             }
           ]
         },
         {
-          "effect": "Remove a {blight}",
+          "effect": "Remove a {blight} added by this power this turn",
           "requires": [
             {
               "mana": "fire",
@@ -140,20 +146,7 @@
           ]
         },
         {
-          "effect": "{destroyed-presence} 1/3 Damage per ash card.",
-          "requires": [
-            {
-              "mana": "fire",
-              "amount": 3
-            },
-            {
-              "mana": "air",
-              "amount": 2
-            }
-          ]
-        },
-        {
-          "effect": "repeat one effect of this power. You may target a different land.",
+          "effect": "Repeat this power.",
           "requires": [
             {
               "mana": "air",
@@ -167,7 +160,7 @@
       "name": "For a new Beginning",
       "speed": "slow",
       "target": {
-        "range": 1,
+        "range": 2,
         "targetType": "land"
       },
       "levels": [
@@ -216,7 +209,7 @@
   "uniquePowers": [
     {
       "name": "Everything repeats",
-      "effect": "Target spirit gains 1 energy.<br>Target Spirit gain on card from the ashes. Target Spirit may pay its cost to play it imidetly",
+      "effect": "Target Spirit gain a card from the ashes. Target Spirit may pay its cost to play it imidetly<br>If the power card is a major power you or target spirit needs to pay 2 energy.<br>If target spirit is not you it gains 1 energy.",
       "energy": 1,
       "image": {
         "path": "regrowth.png",
