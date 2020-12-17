@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/LokiMidgard/spirit-island-renderer/v0.2.2/spirit-schema.json",
+  "$schema": "https://raw.githubusercontent.com/LokiMidgard/spirit-island-renderer/v0.2.4/spirit-schema.json",
   "name": "Skulkung Skullking",
   "boarder": "smoke_PNG55166.png",
   "image": {

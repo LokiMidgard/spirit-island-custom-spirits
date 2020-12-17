@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/LokiMidgard/spirit-island-renderer/v0.2.2/spirit-schema.json",
+  "$schema": "https://raw.githubusercontent.com/LokiMidgard/spirit-island-renderer/v0.2.4/spirit-schema.json",
   "name": "Ashes Renews the Land",
   "boarder": {
     "path": "feather.png",
@@ -34,7 +34,7 @@
     "subGrowth": [
       {
         "title": "always:",
-        "choice": "gain-power-card"
+        "choice": ["gain-power-card"]
       },
       {
         "title": "pick one of:",
