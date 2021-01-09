@@ -102,7 +102,7 @@
   "specialRules": [
     {
       "title": "Fuled with Power",
-      "text": "You have a seperate area for power cards called the ashes. Whenever you forget a power, put it in the ashes. You may either gain the energy cost as energy or gain the mana of the forgotten card. Cards in the ashes are not considerd removed from the game unless explicitly referenced."
+      "text": "You have a seperate area for power cards called the ashes. Whenever you forget a power, put it in the ashes. You may either gain the energy cost as energy or gain the mana of the forgotten card. The maximum energy per round you can gain is the number of cards in the ashes. Cards in the ashes are not considerd removed from the game unless explicitly referenced."
     },
     {
       "title": "Flames that consume everything",
