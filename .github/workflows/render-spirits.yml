@@ -56,7 +56,7 @@ jobs:
     - shell: powershell
       name: Add readme
       run: |
-        Set-Content ../out/readme.md -Value "Download `spiritImporter.json` and `spiritImporter.png` to your saved objects folder to import spirits to tabletops simulator.
+        Set-Content ./out/readme.md -Value "Download `spiritImporter.json` and `spiritImporter.png` to your saved objects folder to import spirits to tabletops simulator.
         
         See [main branch](https://github.com/LokiMidgard/spirit-island-custom-spirits/tree/main) for a detailed description.
         
