@@ -1,11 +1,7 @@
 {
-  "$schema": "https://raw.githubusercontent.com/LokiMidgard/spirit-island-renderer/v0.2.4/spirit-schema.json",
+  "$schema": "https://raw.githubusercontent.com/LokiMidgard/spirit-island-renderer/v0.2.6/spirit-schema.json",
   "name": "Ashes Renews the Land",
-  "boarder": {
-    "path": "feather.png",
-    "artistName": "PNG ALL",
-    "y": 712
-  },
+  "boarder": "ashes.png",
   "image": {
     "path": "553878_miststrara_phoenix-rising.jpg",
     "artistName": "miststrara"
@@ -34,7 +30,9 @@
     "subGrowth": [
       {
         "title": "always:",
-        "choice": ["gain-power-card"]
+        "choice": [
+          "gain-power-card"
+        ]
       },
       {
         "title": "pick one of:",
