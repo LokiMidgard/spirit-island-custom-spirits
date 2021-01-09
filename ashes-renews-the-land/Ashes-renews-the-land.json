@@ -1,7 +1,8 @@
 {
-  "$schema": "https://raw.githubusercontent.com/LokiMidgard/spirit-island-renderer/v0.2.6/spirit-schema.json",
+  "$schema": "https://raw.githubusercontent.com/LokiMidgard/spirit-island-renderer/v0.2.7/spirit-schema.json",
   "name": "Ashes Renews the Land",
   "boarder": "ashes.png",
+  "trackBackground": "ashes2.png",
   "image": {
     "path": "553878_miststrara_phoenix-rising.jpg",
     "artistName": "miststrara"
